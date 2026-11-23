@@ -23,6 +23,7 @@
         h1 { font-size: 1.8rem; margin-top: 0; border-bottom: 1px solid #eee; padding-bottom: 12px; }
         h2 { font-size: 1.25rem; margin-top: 24px; color: #111; }
         p, li { color: #444; }
+        code { background: #f2f4f7; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
         .date { color: #777; font-size: 0.9rem; margin-bottom: 20px; }
     </style>
 </head>
@@ -31,34 +32,37 @@
     <h1>Privacy Policy</h1>
     <p class="date">Effective Date: November 23, 2026</p>
 
-    <p>This Privacy Policy applies to all mobile applications developed and published on Google Play by <strong>AvM</strong> ("Developer", "we", "us", or "our").</p>
+    <p>This Privacy Policy applies to mobile applications (including <strong>GaRF</strong> and other utilities) developed and published on Google Play by <strong>AvM</strong> ("Developer", "we", "us", or "our").</p>
 
-    <h2>1. Information Collection and Use</h2>
-    <p>Our applications are designed with a privacy-first, offline-first approach. We do <strong>not</strong> collect, transmit, store, or sell any personally identifiable information (PII) on external servers.</p>
-    <p>All data you enter or generate within our applications—such as notes, logs, schedules, settings, recipes, vehicle records, or attached files—is stored strictly locally on your device.</p>
+    <h2>1. Local-First Architecture &amp; Data Encryption</h2>
+    <p>Our applications are built on a strict privacy-first, offline-first architecture. We do <strong>not</strong> operate backend servers to collect, store, or process your personal information.</p>
+    <p>All user-entered and generated data—including vehicle profiles, maintenance logs, fuel records, insurance policies, attached documents, photos, and fuel receipts—is stored <strong>exclusively locally on your device</strong> inside encrypted storage protected by <code>SQLCipher</code> database encryption and <code>AES-256-GCM</code> file encryption.</p>
 
     <h2>2. Device Permissions</h2>
-    <p>Depending on the specific features of an application, it may request access to certain device capabilities solely for local functionality:</p>
+    <p>The application requests sensitive system permissions solely for on-device functionality:</p>
     <ul>
-        <li><strong>Notifications &amp; Alarms:</strong> Used exclusively to deliver local reminders and timers scheduled by you on your device.</li>
-        <li><strong>Camera &amp; Storage / Media:</strong> Used only when you explicitly choose to attach photos, scan documents, or export/import local backup files (e.g., PDF, CSV, JSON, or database backups).</li>
+        <li><strong>Camera (<code>android.permission.CAMERA</code>):</strong> Used strictly locally when you capture photos of documents, vehicle records, or scan receipts (including on-device OCR processing). Captured images are encrypted and stored locally on your device and are never uploaded to our servers.</li>
+        <li><strong>Storage &amp; Media:</strong> Used only when you explicitly import files/images or export local backups and reports (such as PDF or CSV files).</li>
+        <li><strong>Notifications &amp; Alarms:</strong> Used solely to trigger local maintenance reminders, insurance expiration alerts, or timers scheduled by you on the device.</li>
     </ul>
-    <p>No media, documents, or backups are ever uploaded to our servers.</p>
 
-    <h2>3. Third-Party Services &amp; Analytics</h2>
-    <p>Our applications do not integrate third-party advertising networks or behavioral tracking SDKs. However, the apps are distributed via Google Play, which may collect anonymous crash logs and basic diagnostics in accordance with the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</p>
+    <h2>3. External API Requests (VIN Decoding)</h2>
+    <p>The application does not transmit your personal data in the background. The only external network request initiated by the app's functional features occurs when you explicitly trigger a VIN lookup: in that case, <strong>only the Vehicle Identification Number (VIN)</strong> is sent via HTTPS to the official U.S. National Highway Traffic Safety Administration (NHTSA) public API (<code>vpic.nhtsa.dot.gov</code>) solely to retrieve technical vehicle specifications.</p>
 
-    <h2>4. Data Security &amp; Deletion</h2>
-    <p>Because your data resides locally on your device, you remain in full control of it at all times. You can delete your data permanently at any moment by clearing the app's storage in your Android system settings or by uninstalling the application.</p>
+    <h2>4. No Telemetry, Analytics, or Advertising</h2>
+    <p>Our applications contain <strong>no advertisements</strong>, collect <strong>no usage telemetry</strong>, and integrate no third-party behavioral tracking SDKs. Google Play may independently collect anonymized crash diagnostics in accordance with the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</p>
 
-    <h2>5. Children's Privacy</h2>
-    <p>Our applications are not directed at children under the age of 13. We do not knowingly collect any personal information from children.</p>
+    <h2>5. Data Control &amp; Deletion</h2>
+    <p>You have full physical control over your encrypted data. You can delete individual records inside the app, wipe all application data via Android system settings, or uninstall the app to permanently remove all locally stored databases and encrypted files.</p>
 
-    <h2>6. Changes to This Privacy Policy</h2>
-    <p>We may update this Privacy Policy from time to time if new features (such as cloud sync or monetization) are introduced. Any updates will be posted on this page with an updated effective date.</p>
+    <h2>6. Children's Privacy</h2>
+    <p>Our applications are not intended for children under the age of 13, and we do not knowingly collect any data from children.</p>
 
-    <h2>7. Contact Us</h2>
-    <p>If you have any questions or suggestions regarding this Privacy Policy, please contact us at: <a href="mailto:avm.grf.bk@gmail.com">avm.grf.bk@gmail.com</a></p>
+    <h2>7. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy to reflect future app updates. The latest version will always remain available at this URL.</p>
+
+    <h2>8. Contact</h2>
+    <p>If you have any questions regarding this Privacy Policy, please contact: <a href="mailto:avm.grf.bk@gmail.com">avm.grf.bk@gmail.com</a></p>
 </div>
 </body>
 </html>
